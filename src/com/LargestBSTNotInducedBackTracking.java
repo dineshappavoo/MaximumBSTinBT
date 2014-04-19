@@ -58,13 +58,13 @@ public class LargestBSTNotInducedBackTracking {
 		
 		TreeNodeHelper[] result=getLargestBST(res);
 		result[0]=result[1]==null?result[0]:(result[0].nodes>result[1].nodes?result[0]:result[1]);
-		System.out.println("\nRoot Node : "+result[0].node.data+ " 	Minimum: "+result[0].minValue + "	 Maximum:  "+result[0].maxValue);
+		System.out.println("\nRoot Node : "+result[0].node.data+ " 	Minimum(Left most leaf): "+result[0].minValue + "	 Maximum(Right most leaf):  "+result[0].maxValue);
 		System.out.println("INORDER TRAVERSAL OF BST");
 		new MaxBSTinBTUtil().printBST(result[0].node, Integer.MIN_VALUE, Integer.MAX_VALUE);
 		
 		result=getLargestBST(res1);
 		result[0]=result[1]==null?result[0]:(result[0].nodes>result[1].nodes?result[0]:result[1]);
-		System.out.println("\n\nRoot Node : "+result[0].node.data+ " 	Minimum: "+result[0].minValue + "	 Maximum:  "+result[0].maxValue);
+		System.out.println("\n\nRoot Node : "+result[0].node.data+ " 	Minimum(Left most leaf): "+result[0].minValue + "	 Maximum(Right most leaf):  "+result[0].maxValue);
 		System.out.println("INORDER TRAVERSAL OF BST");
 		new MaxBSTinBTUtil().printBST(result[0].node, Integer.MIN_VALUE, Integer.MAX_VALUE);
 		
@@ -74,6 +74,13 @@ public class LargestBSTNotInducedBackTracking {
 
 	}
 	
+	/**
+	 * 
+	 * @author Dany
+	 * 
+	 * Helper bean object to carry the BST information
+	 *
+	 */
 	 public static class TreeNodeHelper {
 	        TreeNode node;
 	        int nodes;
